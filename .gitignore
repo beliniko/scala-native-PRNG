@@ -13,6 +13,9 @@ project/project/
 *.war
 *.ear
 
+.metals/
+.vscode/
+
 # OS specific files
 .DS_Store
 Thumbs.db

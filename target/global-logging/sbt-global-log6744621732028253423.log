@@ -1,0 +1,29 @@
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(run, Some(65efee21-5333-46c6-bff9-ad378643e202), Some(CommandSource(console0)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mEvaluating tasks: Compile / run[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning task... Cancel: Signal, check cycles: false, forcegc: true[0m
+[0m[[0m[0minfo[0m] [0m[0mUpdating temp-module-f02db565ec103839151504cb68a2a8c6f03e291a[0m
+[0m[[0m[0minfo[0m] [0m[0mResolved temp-module-f02db565ec103839151504cb68a2a8c6f03e291a dependencies[0m
+[0m[[0m[0minfo[0m] [0m[0mFetching artifacts of temp-module-f02db565ec103839151504cb68a2a8c6f03e291a[0m
+[0m[[0m[0minfo[0m] [0m[0mFetched artifacts of temp-module-f02db565ec103839151504cb68a2a8c6f03e291a[0m
+[0m[[0m[0minfo[0m] [0m[0mcompiling 1 Scala source to /home/beliniko/development/scala/scala-native-test/target/scala-3.3.3/classes ...[0m
+[0m[[0m[0minfo[0m] [0m[0mLinking (multithreadingEnabled=true, disable if not used) (1029 ms)[0m
+[0m[[0m[0minfo[0m] [0m[0mDiscovered 869 classes and 5313 methods after classloading[0m
+[0m[[0m[0minfo[0m] [0m[0mChecking intermediate code (quick) (59 ms)[0m
+[0m[[0m[0minfo[0m] [0m[0mMultithreading was not explicitly enabled - initial class loading has not detected any usage of system threads. Multithreading support will be disabled to improve performance.[0m
+[0m[[0m[0minfo[0m] [0m[0mLinking (multithreadingEnabled=false) (367 ms)[0m
+[0m[[0m[0minfo[0m] [0m[0mDiscovered 488 classes and 2474 methods after classloading[0m
+[0m[[0m[0minfo[0m] [0m[0mChecking intermediate code (quick) (11 ms)[0m
+[0m[[0m[0minfo[0m] [0m[0mDiscovered 467 classes and 1895 methods after optimization[0m
+[0m[[0m[0minfo[0m] [0m[0mOptimizing (debug mode) (726 ms)[0m
+[0m[[0m[0minfo[0m] [0m[0mProduced 43 LLVM IR files[0m
+[0m[[0m[0minfo[0m] [0m[0mGenerating intermediate code (1740 ms)[0m
+[0m[[0m[0minfo[0m] [0m[0mCompiling to native code (1417 ms)[0m
+[0m[[0m[0minfo[0m] [0m[0mLinking with [pthread, dl][0m
+[0m[[0m[31merror[0m] [0m[0m/usr/bin/ld: warning: /home/beliniko/development/scala/scala-native-test/target/scala-3.3.3/native/dependencies/nativelib_native0.5_3-0.5.1-0/scala-native/delimcc/setjmp_arm64.S.o: missing .note.GNU-stack section implies executable stack[0m
+[0m[[0m[31merror[0m] [0m[0m/usr/bin/ld: NOTE: This behaviour is deprecated and will be removed in a future version of the linker[0m
+[0m[[0m[0minfo[0m] [0m[0mLinking native code (immix gc, none lto) (141 ms)[0m
+[0m[[0m[0minfo[0m] [0m[0mPostprocessing (0 ms)[0m
+[0m[[0m[0minfo[0m] [0m[0mTotal (4307 ms)[0m
+[0m[[0m[32msuccess[0m] [0m[0mTotal time: 7 s, completed 8.9.2024 14:24:44[0m
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(shell, None, None)[0m
+[0m[[0m[0mdebug[0m] [0m[0mForcing garbage collection...[0m

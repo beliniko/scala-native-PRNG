@@ -1,0 +1,41 @@
+# SBT build files
+target/
+project/target/
+project/project/
+
+# Idea and Eclipse files
+.idea/
+*.iml
+*.ipr
+*.iws
+*.class
+*.jar
+*.war
+*.ear
+
+# OS specific files
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log
+
+# Scala specific
+*.class
+.cache
+lib_managed/
+src_managed/
+dist/
+build/
+
+# Native output
+*.native
+*.o
+*.dylib
+*.so
+*.dll
+
+# Other common SBT generated files
+.history
+.cache

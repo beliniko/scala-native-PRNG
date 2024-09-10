@@ -2,15 +2,15 @@
     "version": "1.4.0",
     "project": {
         "name": "scala-native-prng-build",
-        "directory": "/home/beliniko/development/scala/scala-native-PRNG/project",
-        "workspaceDir": "/home/beliniko/development/scala/scala-native-PRNG/project",
+        "directory": "/home/beliniko/tmp/scala-native-PRNG/project",
+        "workspaceDir": "/home/beliniko/tmp/scala-native-PRNG/project",
         "sources": [
-            "/home/beliniko/development/scala/scala-native-PRNG/project/src/main/scala",
-            "/home/beliniko/development/scala/scala-native-PRNG/project/src/main/scala-2.12",
-            "/home/beliniko/development/scala/scala-native-PRNG/project/src/main/scala-2",
-            "/home/beliniko/development/scala/scala-native-PRNG/project/src/main/java",
-            "/home/beliniko/development/scala/scala-native-PRNG/project/src/main/scala-sbt-1.0",
-            "/home/beliniko/development/scala/scala-native-PRNG/project/target/scala-2.12/sbt-1.0/src_managed/main"
+            "/home/beliniko/tmp/scala-native-PRNG/project/src/main/scala",
+            "/home/beliniko/tmp/scala-native-PRNG/project/src/main/scala-2.12",
+            "/home/beliniko/tmp/scala-native-PRNG/project/src/main/scala-2",
+            "/home/beliniko/tmp/scala-native-PRNG/project/src/main/java",
+            "/home/beliniko/tmp/scala-native-PRNG/project/src/main/scala-sbt-1.0",
+            "/home/beliniko/tmp/scala-native-PRNG/project/target/scala-2.12/sbt-1.0/src_managed/main"
         ],
         "dependencies": [
             
@@ -114,11 +114,11 @@
             "/home/beliniko/.cache/coursier/v1/https/repo1.maven.org/maven2/org/reactivestreams/reactive-streams/1.0.3/reactive-streams-1.0.3.jar",
             "/home/beliniko/.cache/coursier/v1/https/repo1.maven.org/maven2/com/typesafe/config/1.4.2/config-1.4.2.jar"
         ],
-        "out": "/home/beliniko/development/scala/scala-native-PRNG/project/.bloop/scala-native-prng-build",
-        "classesDir": "/home/beliniko/development/scala/scala-native-PRNG/project/.bloop/scala-native-prng-build/scala-2.12/sbt-1.0/classes",
+        "out": "/home/beliniko/tmp/scala-native-PRNG/project/.bloop/scala-native-prng-build",
+        "classesDir": "/home/beliniko/tmp/scala-native-PRNG/project/.bloop/scala-native-prng-build/scala-2.12/sbt-1.0/classes",
         "resources": [
-            "/home/beliniko/development/scala/scala-native-PRNG/project/src/main/resources",
-            "/home/beliniko/development/scala/scala-native-PRNG/project/target/scala-2.12/sbt-1.0/resource_managed/main"
+            "/home/beliniko/tmp/scala-native-PRNG/project/src/main/resources",
+            "/home/beliniko/tmp/scala-native-PRNG/project/target/scala-2.12/sbt-1.0/resource_managed/main"
         ],
         "scala": {
             "organization": "org.scala-lang",
@@ -225,7 +225,7 @@
             "config": {
                 "home": "/usr/lib/jvm/java-21-openjdk-amd64",
                 "options": [
-                    "-Duser.dir=/home/beliniko/development/scala/scala-native-PRNG/project"
+                    "-Duser.dir=/home/beliniko/tmp/scala-native-PRNG/project"
                 ]
             },
             "mainClass": [
@@ -234,11 +234,11 @@
             "runtimeConfig": {
                 "home": "/usr/lib/jvm/java-21-openjdk-amd64",
                 "options": [
-                    "-Duser.dir=/home/beliniko/development/scala/scala-native-PRNG/project"
+                    "-Duser.dir=/home/beliniko/tmp/scala-native-PRNG/project"
                 ]
             },
             "classpath": [
-                "/home/beliniko/development/scala/scala-native-PRNG/project/.bloop/scala-native-prng-build/scala-2.12/sbt-1.0/classes",
+                "/home/beliniko/tmp/scala-native-PRNG/project/.bloop/scala-native-prng-build/scala-2.12/sbt-1.0/classes",
                 "/home/beliniko/.cache/coursier/v1/https/repo1.maven.org/maven2/ch/epfl/scala/sbt-bloop_2.12_1.0/1.6.0/sbt-bloop_2.12_1.0-1.6.0.jar",
                 "/home/beliniko/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-native/sbt-scala-native_2.12_1.0/0.5.1/sbt-scala-native_2.12_1.0-0.5.1.jar",
                 "/home/beliniko/.cache/coursier/v1/https/repo1.maven.org/maven2/ch/epfl/scala/bloop-config_2.12/2.0.2/bloop-config_2.12-2.0.2.jar",

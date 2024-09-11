@@ -1,5 +1,5 @@
 package prng
-object MersenneTwister{
+object MersenneTwister extends Rng { 
    val N = 624
    val M = 397
    val MATRIX_A = 0x9908b0df
@@ -7,7 +7,10 @@ object MersenneTwister{
    val LOWER_MASK = 0x7fffffff
    val mt = new Array[Int](N)
    var mti = N + 1
+   
    init(seed = 53785)
+
+   override def nextInt(): Int = nextInt(Int.MinValue, Int.MaxValue)
 
    def nextInt(start: Int, end: Int): Int = {
     if (mti >= N) {
@@ -26,6 +29,7 @@ object MersenneTwister{
     val randomNumber = ((y.toInt & Int.MaxValue) % (end - start + 1)) + start
     randomNumber
    }
+
 // Twist-function for mixing the MT-Array
    def twist(): Unit = {
     for (i <- 0 until (N - M)) {
@@ -43,15 +47,17 @@ object MersenneTwister{
 
     mti = 0
   }
+
 // initialization of the array with a given seed
-  def init(seed: Int): Unit = {
+   def init(seed: Int): Unit = {
     mt(0) = seed
     for (i <- 1 until N) {
       mt(i) = (1812433253 * (mt(i - 1) ^ (mt(i - 1) >>> 30)) + i)
     }
-  }
+   }
+
 // generates a sequence of random numbers ([start, end] is the range of value and length is the length of the sequence)
-  def seqOfInt(start: Int, end: Int, length: Int): Seq[Int] = {
-    (0 until length).map(_ => nextInt(start, end))
-  }
+   override def seqOfInt(start: Int, end: Int, length: Int): Vector[Int] = {
+    (0 until length).map(_ => nextInt(start, end)).toVector
+   }
 }

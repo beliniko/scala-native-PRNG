@@ -1,18 +1,20 @@
 package prng
-import sun.security.util.Length
 
-object XORShift {
-private val seed = 2187464 // Das ist der Startwert, der manuell geändert werden kann
+object XORShift extends Rng {
+  private val seed = 2187464 // Das ist der Startwert, der manuell geändert werden kann
+  private var state = seed
 
- def nextInt(seed: Long): Int = {
-    var x = seed
+  override def nextInt(): Int = {
+    var x = state
     x ^= (x << 13)
     x ^= (x >> 17)
     x ^= (x << 5)
-    x.toInt % 10
+    state = x
+    x
   }
+
   //generates a sequence of random numbers ([start, end] is the range of value and length is the length of the sequence)
-  def seqOfInt(start: Int, end: Int, length:Int): Seq[Int] = {
+  override def seqOfInt(start: Int, end: Int, length:Int): Vector[Int] = {
     var x = seed
     (1 to length).map{ _ =>
       x ^= (x << 13)
@@ -20,11 +22,6 @@ private val seed = 2187464 // Das ist der Startwert, der manuell geändert werde
       x ^= (x << 5)
       val randomNumber = ((x.toInt & Int.MaxValue) % (end - start + 1)) + start
       randomNumber
-    }
+    }.toVector
   }
 }
-/*val randomNumber = nextInt(42L)
-    println(s"Generated random number: $randomNumber")
-    val generatedSequence = seqOfInt(42L, 1000)
-    println(s"Die generierte Sequenz: $generatedSequence")
-    */

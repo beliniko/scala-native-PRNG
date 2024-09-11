@@ -15,6 +15,8 @@ project/project/
 
 .metals/
 .vscode/
+.bloop/
+.bsp/
 
 # OS specific files
 .DS_Store

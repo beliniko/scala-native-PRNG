@@ -7,9 +7,9 @@ object MersenneTwister{
    val LOWER_MASK = 0x7fffffff
    val mt = new Array[Int](N)
    var mti = N + 1
-   init(seed = 42)
+   init(seed = 53785)
 
-   def nextInt(): Int = {
+   def nextInt(start: Int, end: Int): Int = {
     if (mti >= N) {
       twist() // Re-shuffle the array when the index exceeds N
     }
@@ -23,10 +23,10 @@ object MersenneTwister{
     y ^= (y << 15) & 0xefc60000
     y ^= (y >>> 18)
 
-    val randomNumber = (y.toInt & Int.MaxValue) % 10
+    val randomNumber = ((y.toInt & Int.MaxValue) % (end - start + 1)) + start
     randomNumber
    }
-// Twist-Funktion, um das Array neu zu mischen
+// Twist-function for mixing the MT-Array
    def twist(): Unit = {
     for (i <- 0 until (N - M)) {
       val y = (mt(i) & UPPER_MASK) | (mt(i + 1) & LOWER_MASK)
@@ -43,15 +43,15 @@ object MersenneTwister{
 
     mti = 0
   }
-// Initialisierung des Arrays mit einem Seed
+// initialization of the array with a given seed
   def init(seed: Int): Unit = {
     mt(0) = seed
     for (i <- 1 until N) {
       mt(i) = (1812433253 * (mt(i - 1) ^ (mt(i - 1) >>> 30)) + i)
     }
   }
-// Generierung von einer Sequenz von Pseudozufallszahlen
-  def seqOfInt(length: Int): Seq[Int] = {
-    (0 until length).map(_ => nextInt())
+// generates a sequence of random numbers ([start, end] is the range of value and length is the length of the sequence)
+  def seqOfInt(start: Int, end: Int, length: Int): Seq[Int] = {
+    (0 until length).map(_ => nextInt(start, end))
   }
 }

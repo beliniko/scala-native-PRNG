@@ -7,12 +7,12 @@ object MersenneTwister extends Rng {
    val LOWER_MASK = 0x7fffffff
    val mt = new Array[Int](N)
    var mti = N + 1
-   
+
    init(seed = 53785)
 
-   override def nextInt(): Int = nextInt(Int.MinValue, Int.MaxValue)
+   //override def nextInt(): Int = nextInt(Int.MinValue, Int.MaxValue)
 
-   def nextInt(start: Int, end: Int): Int = {
+    override def nextInt(start: Int, end: Int): Int = {
     if (mti >= N) {
       twist() // Re-shuffle the array when the index exceeds N
     }

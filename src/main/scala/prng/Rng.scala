@@ -7,9 +7,9 @@ trait Rng {
     *
     * @return
     */
-  def nextInt(): Int
+  def nextInt(start: Int, end: Int): Int
 
-  def nextDouble(): Double = (nextInt().toDouble - Int.MinValue.toDouble) / (Int.MaxValue.toDouble - Int.MinValue.toDouble)
+  def nextDouble(): Double = (nextInt(1, 2).toDouble - Int.MinValue.toDouble) / (Int.MaxValue.toDouble - Int.MinValue.toDouble)
 
   /** Generates a sequence of random numbers
    * 

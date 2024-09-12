@@ -8,7 +8,7 @@ object MersenneTwister extends Rng {
    val mt = new Array[Int](N)
    var mti = N + 1
 
-   init(seed = 53785)
+   init(seed = 53768785)
 
    //override def nextInt(): Int = nextInt(Int.MinValue, Int.MaxValue)
 
@@ -60,4 +60,8 @@ object MersenneTwister extends Rng {
    override def seqOfInt(start: Int, end: Int, length: Int): Vector[Int] = {
     (0 until length).map(_ => nextInt(start, end)).toVector
    }
+   
+   def generateRandomDoubles(count: Int): Seq[Double] = {
+    (1 to count).map(_ => MersenneTwister.nextDouble())
+  }
 }

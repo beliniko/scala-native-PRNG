@@ -9,8 +9,10 @@ trait Rng {
     */
   def nextInt(start: Int, end: Int): Int
 
-  def nextDouble(): Double = (nextInt(1, 2).toDouble - Int.MinValue.toDouble) / (Int.MaxValue.toDouble - Int.MinValue.toDouble)
-
+  def nextDouble(): Double = {
+    val randomInt = nextInt(Int.MinValue, Int.MaxValue)
+    (randomInt.toDouble - Int.MinValue.toDouble) / (Int.MaxValue.toDouble - Int.MinValue.toDouble)
+  }
   /** Generates a sequence of random numbers
    * 
    * @param start the start of the range

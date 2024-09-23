@@ -3,7 +3,7 @@ package benchmark
 object unpredictableTest{
     def autocorrelation(data: Seq[Int], lag: Int): Double = {
         val N = data.length
-        val mean = data.sum / N 
+        val mean = data.map(_.toLong).sum / N 
 
         val numerator = (0 until N - lag).map { i =>
             (data(i) - mean) * (data(i + lag) - mean)

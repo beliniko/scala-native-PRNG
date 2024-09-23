@@ -9,6 +9,12 @@ trait Rng {
     */
   def nextInt(start: Int, end: Int): Int
 
+  protected inline def fromLongToInteger(long: Long, start: Int, end: Int): Int = {
+    val range = end.toLong - start.toLong + 1L
+    val mappedInt = ((long & Long.MaxValue) % range).toInt + start 
+    mappedInt
+  }
+
   def nextDouble(): Double = {
     val randomInt = nextInt(Int.MinValue, Int.MaxValue)
     (randomInt.toDouble - Int.MinValue.toDouble) / (Int.MaxValue.toDouble - Int.MinValue.toDouble)
@@ -22,4 +28,3 @@ trait Rng {
    */
   def seqOfInt(start: Int, end: Int, lenght: Int): Vector[Int]
 }
-

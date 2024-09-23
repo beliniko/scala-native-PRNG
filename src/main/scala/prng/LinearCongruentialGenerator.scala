@@ -11,8 +11,8 @@ object LinearCongruentialGenerator extends Rng {
   override def nextInt(start: Int, end: Int): Int = {
     state = (a * state + c) % m
     // todo do not use .toInt! it makes random number generation less random
-    val randomNumber = ((state.toInt & Int.MaxValue) % (end - start + 1)) + start 
-    randomNumber
+
+    fromLongToInteger(state, start = start, end = end)
   }
 
 // generates a sequence of random numbers ([start, end] is the range of value and length is the length of the sequence)

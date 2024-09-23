@@ -1,4 +1,4 @@
-scalaVersion := "3.3.3" // A Long Term Support version.
+scalaVersion := "3.5.1" // A Long Term Support version.
 
 enablePlugins(ScalaNativePlugin)
 
@@ -14,3 +14,8 @@ nativeConfig ~= { c =>
     .withMode(Mode.debug) // releaseFast
     .withGC(GC.immix) // commix
 }
+
+enablePlugins(ScalaNativeJUnitPlugin)
+testOptions += Tests.Argument(TestFrameworks.JUnit, "-a", "-s", "-v")
+
+libraryDependencies += "com.lihaoyi" %%% "mainargs" % "0.7.5"

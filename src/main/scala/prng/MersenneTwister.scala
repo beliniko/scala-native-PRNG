@@ -26,8 +26,7 @@ object MersenneTwister extends Rng {
     y ^= (y << 15) & 0xefc60000
     y ^= (y >>> 18)
 
-    val randomNumber = ((y.toInt & Int.MaxValue) % (end - start + 1)) + start
-    randomNumber
+    fromLongToInteger(y, start = start, end = end)
    }
 
 // Twist-function for mixing the MT-Array
@@ -61,7 +60,7 @@ object MersenneTwister extends Rng {
     (0 until length).map(_ => nextInt(start, end)).toVector
    }
    
-   def generateRandomDoubles(count: Int): Seq[Double] = {
+   def generateRandomDoubles(count: Int): Vector[Double] = {
     (1 to count).map(_ => MersenneTwister.nextDouble())
-  }
+  }.toVector
 }

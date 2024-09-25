@@ -44,5 +44,4 @@ build/
 # Other common SBT generated files
 .history
 .cache
-#project/project/
-#project/target/
+

@@ -4,9 +4,9 @@ import org.junit.Test
 import org.junit.Assert.*
 
 trait BasicRngTest(rng: Rng) {
-  @Test def nextIntTest(): Unit = {  
+  @Test def nextIntTest(): Unit = {
     val nextInt = rng.nextInt(0, 9)
-    
+
     (1 to 100).foreach { i =>
       val nextInt = rng.nextInt(Int.MinValue, Int.MaxValue)
     }
@@ -14,7 +14,7 @@ trait BasicRngTest(rng: Rng) {
 
   @Test def nextDoubleTest(): Unit = {
     val nextInt = rng.nextInt(0, 9)
-    
+
     (1 to 100).foreach { i =>
       val nextDouble = rng.nextDouble()
     }
@@ -25,11 +25,16 @@ trait BasicRngTest(rng: Rng) {
       rng.nextDouble()
     }
 
-    println(doubles.take(10).mkString(", "))    
-    assertEquals("Doubles should be different", doubles.distinct.size, doubles.size)
+    println(doubles.take(10).mkString(", "))
+    assertEquals(
+      "Doubles should be different",
+      doubles.distinct.size,
+      doubles.size
+    )
   }
 }
 
 class XORShiftTest extends BasicRngTest(XORShift)
-class LinearCongruentialGeneratorTest extends BasicRngTest(LinearCongruentialGenerator)
+class LinearCongruentialGeneratorTest
+    extends BasicRngTest(LinearCongruentialGenerator)
 class MersenneTwisterTest extends BasicRngTest(MersenneTwister)

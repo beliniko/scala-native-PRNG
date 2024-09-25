@@ -1,5 +1,7 @@
 package usecases
 
 trait Simulator(using rng: prng.Rng) {
-  def simulate(hour: Int): Double
+  def simulate(hour: Double): Double
+
+  def simulateFullDay(): Seq[Double]
 }

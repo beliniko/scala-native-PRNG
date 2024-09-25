@@ -11,7 +11,7 @@ class TemperatureSimulator(
 
   private val (dayStart, dayEnd) = dayRange
 
-  override def simulate(hour: Int): Double = {
+  override def simulate(hour: Double): Double = {
     // Durchschnittliche Tagesprofile
     val baseTemp = if (hour >= 6 && hour < 18) {
       // Tag: Durchschnittstemperatur zwischen 15 und 30 Grad
@@ -27,4 +27,21 @@ class TemperatureSimulator(
     // Füge zufällige Schwankung hinzu (z.B. +/- 2 Grad)
     baseTemp + rng.nextDouble() * fluctuation - halfFluctuation
   }
+
+  override def simulateFullDay(): Seq[Double] = (0 to 23).map(i => simulate(i))
 }
+// @main def runSimulation(): Unit = {
+//   val nightRange = (10, 16)
+//   val dayRange = (13, 20)
+//   val fluctuation = 4
+
+//   given rng: prng.Rng = prng.XORShift
+
+//   val simulator = TemperatureSimulator(nightRange, dayRange, fluctuation)
+
+//   val fullDayTemperatures = simulator.simulateFullDay()
+
+//   fullDayTemperatures.zipWithIndex.foreach { case (temp, hour) =>
+//     println(s"Stunde $hour: $temp °C")
+//   }
+// }

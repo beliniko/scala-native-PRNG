@@ -17,6 +17,7 @@ project/project/
 .vscode/
 .bloop/
 .bsp/
+.scala-build/
 
 # OS specific files
 .DS_Store

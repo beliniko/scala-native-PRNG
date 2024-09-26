@@ -3,6 +3,7 @@ package usecases
 import scala.annotation.varargs
 
 class BatteryLevelSimulator(using rng: prng.Rng) extends Simulator {
+  // rng.nextDouble() gibt einen Wert zwischen 0 und 1 zurück
   private var currentLevel: Double = 100.0 - rng.nextDouble() * 40 // Startwert
   override def simulate(hour: Double): Double = {
     // Entlade das Gerät tagsüber stärker als nachts

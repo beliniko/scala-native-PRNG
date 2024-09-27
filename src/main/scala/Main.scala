@@ -93,7 +93,7 @@ object Main {
     // val memoryUsage = PerfomanceTest.measureMemoryUsage(config.getRng, 1, start, end, config.sequenceSize)
 
     // val ChiSquareXORShift = EqualDistribution.calculateChiSquareTest(XORShift.seqOfInt(0, 14, 100000), 15)
-    // println(s"Chi-Square-Test for XORShift: $ChiSquareXORShift")
+    // println(s"Chi-Square-Test for XORShift: $ChiSquareXORShift") m
 
     // val autocorrelationXORShift = unpredictableTest.autocorrelation(XORShift.seqOfInt(0, 14, 10000), 1)
     // println(s"Autocorrelation for XORShift: $autocorrelationXORShift")

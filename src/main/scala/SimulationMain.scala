@@ -108,7 +108,7 @@ object SimulationMain {
         num,
         config.getSimulator(),
         (oneDeviceStartDelayMs * (num - 1)).toInt.millis,
-        10.seconds
+        300.seconds
       )
     }.toVector
 
